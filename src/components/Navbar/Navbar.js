@@ -10,7 +10,7 @@ const Navbar = () => {
       <Link to={'/'} className={'brand'}>
         <h2>Neon</h2>
       </Link>
-
+      
       <div className={'links'}>
         <Link to={'/dashboard'} className={'link'}>
           <p>Dashboard</p>
