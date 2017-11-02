@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import './Editor.css';
 
 class Editor extends Component {
   constructor(props) {
@@ -17,7 +18,7 @@ class Editor extends Component {
 
   render() {
     return (
-      <div>
+      <div className={'container'}>
         <input
           type={'text'}
           className={'title'}
