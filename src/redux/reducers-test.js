@@ -1,9 +1,8 @@
 const expect = require('expect');
 const deepfreeze = require('deepfreeze');
 
-const { user } = require('./reducers');
+const { user, currentTopic, topics, docs } = require('./reducers');
 
-const tests = [testUser];
 
 
 function testUser() {
@@ -13,7 +12,6 @@ function testUser() {
   let stateAfter = { name: 'Johnny' };
 
   deepfreeze(stateBefore);
-
   expect(user(stateBefore, action)).toEqual(stateAfter);
 
   // TEST REMOVING USER
@@ -22,7 +20,46 @@ function testUser() {
 }
 
 
+function testCurrentTopic() {
+  let stateBefore = [];
+  let action = { type: 'SET_CURRENT_TOPIC', topic: 'code' };
+  let stateAfter = 'code';
 
+  deepfreeze(stateBefore);
+  expect(currentTopic(stateBefore, action)).toEqual(stateAfter);
+}
+
+
+function testTopics() {
+  let stateBefore = '';
+  let action = { type: 'SET_TOPICS', topics: ['code', 'product', 'general'] };
+  let stateAfter = ['code', 'product', 'general'];
+
+  deepfreeze(stateBefore);
+  expect(topics(stateBefore, action)).toEqual(stateAfter);
+}
+
+
+function testDocs() {
+  let stateBefore = [];
+  let action = {
+    type: 'SET_DOCS',
+    docs: [
+      {title: 'Our Mission', text: 'Our mission is...'},
+      {title: 'Secret Plan', text: 'Our secret plan is...'},
+    ]
+  };
+  let stateAfter = [
+    {title: 'Our Mission', text: 'Our mission is...'},
+    {title: 'Secret Plan', text: 'Our secret plan is...'},
+  ];
+
+  deepfreeze(stateBefore);
+  expect(docs(stateBefore, action)).toEqual(stateAfter);
+}
+
+
+const tests = [testUser, testCurrentTopic, testTopics, testDocs];
 tests.forEach(test => test());
 
 
