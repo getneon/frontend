@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import NavbarContainer from '../Navbar/NavbarContainer';
+import LoginContainer from '../Login/LoginContainer';
 import Home from '../Home/Home';
 import Editor from '../Editor/Editor';
 import Dashboard from '../Dashboard/Dashboard';
@@ -23,6 +24,7 @@ class App extends Component {
               <Route exact path='/' component={Home} />
               <Route path='/dashboard' component={Dashboard} />
               <Route path='/doc' component={Editor} />
+              <Route path='/sign_in' component={LoginContainer} />
             </Switch>
 
           </div>

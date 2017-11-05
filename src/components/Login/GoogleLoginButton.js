@@ -21,10 +21,10 @@ class GoogleLoginButton extends Component {
   render() {
     return (
       <div>
-        {/* <div className="g-signin2" data-onsuccess={this.handleGoogleResponse}></div> */}
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
         <GoogleLogin
           socialId="879615622858-f2oj26u8ac8b4r51f14nhb2ankf0rnpc.apps.googleusercontent.com"
-          className="g-signin2"
+          className="google-login g-signin2"
           scope="profile"
           fetchBasicProfile={false}
           responseHandler={this.handleGoogleResponse}
