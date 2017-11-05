@@ -6,6 +6,12 @@ function setUser(user) {
   }
 }
 
+function removeUser() {
+  return {
+    type: 'REMOVE_USER'
+  }
+}
 
 
-export { setUser };
+
+export { setUser, removeUser };

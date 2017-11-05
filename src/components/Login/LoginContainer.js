@@ -22,7 +22,7 @@ class LoginContainer extends Component {
   }
 
   render() {
-    console.log('USER ON LOGIN => ', this.props.user)
+    console.log('USER REDUX => ', this.props.user)
     return (
       <div>
         <Login handleLogin={this.handleLogin}/>

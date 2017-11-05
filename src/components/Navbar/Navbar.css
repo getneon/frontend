@@ -23,4 +23,5 @@
 .link {
   margin-left: 40px;
   font-size: 95%;
+  cursor: pointer;
 }

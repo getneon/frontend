@@ -1,10 +1,11 @@
 import React from 'react';
 import { GoogleLogin } from 'react-google-login-component';
 
+import './Login.css';
 
 const Login = ({ handleLogin }) => {
   return (
-    <div>
+    <div className={'login-container'}>
       <h2>Login</h2>
       <script src="https://apis.google.com/js/platform.js" async defer></script>
       <GoogleLogin

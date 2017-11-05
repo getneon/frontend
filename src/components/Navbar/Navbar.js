@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import './Navbar.css';
 
-const Navbar = ({ signedIn }) => {
+const Navbar = ({ signedIn, signOut }) => {
   return (
     <div className={'navbar'}>
       <Link to={'/'} className={'brand'}>
@@ -12,20 +12,23 @@ const Navbar = ({ signedIn }) => {
       </Link>
 
       { signedIn &&
-        <div></div>
-      }
-
-      { !signedIn &&
         <div className={'links'}>
           <Link to={'/dashboard'} className={'link'}>
             <p>Dashboard</p>
           </Link>
           <Link to={'/doc'} className={'link'}>
-            <p>Document</p>
+            <p>New Doc</p>
           </Link>
+          <p className={'link'} onClick={signOut}>Log Out</p>
+        </div>
+      }
+
+      { !signedIn &&
+        <div className={'links'}>
           <Link to={'/sign_in'} className={'link'}>
             <p>Sign In</p>
           </Link>
+          <p className={'link'} onClick={signOut}>Log Out</p>
         </div>
       }
     </div>

@@ -7,6 +7,7 @@ const tests = [testUser];
 
 
 function testUser() {
+  // TEST ADDING USER
   let stateBefore = {};
   let action = { type: 'SET_USER', user: { name: 'Johnny' } };
   let stateAfter = { name: 'Johnny' };
@@ -14,6 +15,10 @@ function testUser() {
   deepfreeze(stateBefore);
 
   expect(user(stateBefore, action)).toEqual(stateAfter);
+
+  // TEST REMOVING USER
+  action = { type: 'REMOVE_USER' };
+  expect(user(stateAfter, action)).toEqual(stateBefore);
 }
 
 
