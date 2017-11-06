@@ -18,7 +18,7 @@ class LoginContainer extends Component {
     }
 
     this.props.setUser(user);
-    //anything else you want to do(save to localStorage)...
+    localStorage.setItem('neon', JSON.stringify(user));
   }
 
   render() {

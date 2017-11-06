@@ -14,6 +14,7 @@ class NavbarContainer extends Component {
     });
 
     this.props.removeUser();
+    localStorage.removeItem('neon');
   }
 
   render() {

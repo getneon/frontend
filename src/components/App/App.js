@@ -9,10 +9,21 @@ import Editor from '../Editor/Editor';
 import Dashboard from '../Dashboard/Dashboard';
 
 import store from '../../redux/store';
+import { setUser } from '../../redux/actionCreators';
 
 import './App.css';
 
 class App extends Component {
+
+  componentWillMount() {
+    let user = JSON.parse(localStorage.getItem('neon'));
+    console.log('stored user => ', user);
+
+    if (user) {
+      store.dispatch(setUser(user));
+    }
+  }
+
   render() {
     return (
       <Provider store={store}>
