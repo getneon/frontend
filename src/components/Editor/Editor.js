@@ -18,18 +18,20 @@ class Editor extends Component {
 
   render() {
     return (
-      <div className={'container'}>
-        <input
-          type={'text'}
-          className={'title'}
-          placeholder={'Title'}
-          onChange={e => this.setState({ title: e.target.value })}
-        />
-        <textarea
-          placeholder={'Your idea goes here!'}
-          className={'text'}
-          onChange={e => this.setState({ text: e.target.value })}
-        />
+      <div className='editor-container'>
+        <div className='editor-wrapper'>
+          <input
+            type='text'
+            className='title'
+            placeholder='Title'
+            onChange={e => this.setState({ title: e.target.value })}
+          />
+          <textarea
+            placeholder='Your idea goes here!'
+            className='text'
+            onChange={e => this.setState({ text: e.target.value })}
+          />
+        </div>
       </div>
     )
   }

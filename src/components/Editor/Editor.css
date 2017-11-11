@@ -1,6 +1,48 @@
-.container {
+.editor-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+}
+
+.editor-wrapper {
+  background-color: white;
+  width: 800px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.title, .text {
+  width: 100%;
+  border: none;
+  outline: none;
+
+}
+
+.title {
+  font-size: 2.1em;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.text {
+  font-size: 1.2em;
+  min-height: 400px;
+  line-height: 1.5em;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #B3B3B1;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #B3B3B1;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #B3B3B1;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #B3B3B1;
 }
