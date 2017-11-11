@@ -11,7 +11,7 @@
 }
 
 .brand {
-
+  font-size: 1.2em;
 }
 
 .links {
@@ -24,4 +24,15 @@
   margin-left: 40px;
   font-size: 95%;
   cursor: pointer;
+}
+
+.navbar a,
+.navbar .link {
+  color: black;
+  transition: color 250ms;
+}
+
+.navbar a:hover,
+.link:hover {
+  color: #2ecc71;
 }

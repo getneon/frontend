@@ -7,7 +7,7 @@ const Login = ({ handleLogin }) => {
   return (
     <div className={'login-container'}>
       <h2>Login</h2>
-      <script src="https://apis.google.com/js/platform.js" async defer></script>
+      {/* <script src="https://apis.google.com/js/platform.js" async defer></script> */}
       <GoogleLogin
         socialId="879615622858-f2oj26u8ac8b4r51f14nhb2ankf0rnpc.apps.googleusercontent.com"
         className="google-login g-signin2"
