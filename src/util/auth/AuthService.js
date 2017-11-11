@@ -1,11 +1,11 @@
 import decode from 'jwt-decode';
-import { browserHistory } from 'react-router';
+// import { browserHistory } from 'react-router';
 import auth0 from 'auth0-js';
 const ID_TOKEN_KEY = 'id_token';
 const ACCESS_TOKEN_KEY = 'access_token';
 
 const CLIENT_ID = 'nfzZnkjqwjv2FepLI1W05Xlj7BlzyvU2';
-const CLIENT_DOMAIN = 'https://neon-app.auth0.com/';
+const CLIENT_DOMAIN = 'neon-app.auth0.com/';
 const REDIRECT = 'http://localhost:3000/callback';
 const SCOPE = 'basic';
 const AUDIENCE = 'http://neonbeta.com/';
@@ -27,7 +27,8 @@ export function login() {
 export function logout() {
   clearIdToken();
   clearAccessToken();
-  browserHistory.push('/');
+  // TODO: Figure out browser history - maybe use a callback
+  // browserHistory.push('/');
 }
 
 export function requireAuth(nextState, replace) {

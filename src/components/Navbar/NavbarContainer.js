@@ -4,24 +4,14 @@ import { connect } from 'react-redux';
 
 import Navbar from './Navbar';
 
+import { login, logout, isLoggedIn } from '../../util/auth/AuthService';
 import { removeUser } from '../../redux/actionCreators';
 
 class NavbarContainer extends Component {
-  signOut = () => {
-    let auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut()
-      .then(() => {
-        console.log('User signed out.');
-      });
-
-    this.props.removeUser();
-    localStorage.removeItem('neon');
-  }
-
   render() {
     return (
       <div>
-        <Navbar signedIn={this.props.signedIn} signOut={this.signOut} />
+        <Navbar isLoggedIn={isLoggedIn} login={login} logout={logout} />
       </div>
     )
   }

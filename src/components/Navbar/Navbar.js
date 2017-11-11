@@ -4,14 +4,16 @@ import { Link } from 'react-router-dom';
 
 import './Navbar.css';
 
-const Navbar = ({ signedIn, signOut }) => {
+const Navbar = ({ isLoggedIn, login, logout }) => {
+
+  console.log('LOGIN STATUS => ', isLoggedIn())
   return (
     <div className={'navbar'}>
       <Link to={'/'} className={'brand'}>
         <h2>Neon</h2>
       </Link>
 
-      { signedIn &&
+      { isLoggedIn() &&
         <div className={'links'}>
           <Link to={'/dashboard'} className={'link'}>
             <p>Dashboard</p>
@@ -19,16 +21,13 @@ const Navbar = ({ signedIn, signOut }) => {
           <Link to={'/doc'} className={'link'}>
             <p>New Doc</p>
           </Link>
-          <p className={'link'} onClick={signOut}>Log Out</p>
+          <p className={'link'} onClick={logout}>Log Out</p>
         </div>
       }
 
-      { !signedIn &&
+      { !isLoggedIn() &&
         <div className={'links'}>
-          <Link to={'/sign_in'} className={'link'}>
-            <p>Sign In</p>
-          </Link>
-          <p className={'link'} onClick={signOut}>Log Out</p>
+          <p className={'link'} onClick={login}>Log In</p>
         </div>
       }
     </div>
