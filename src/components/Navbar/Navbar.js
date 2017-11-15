@@ -21,13 +21,13 @@ const Navbar = ({ isLoggedIn, login, logout }) => {
           <Link to={'/doc'} className={'link'}>
             <p>New Doc</p>
           </Link>
-          <p className={'link'} onClick={logout}>Log Out</p>
+          <p className={'link'} onClick={() => logout()}>Log Out</p>
         </div>
       }
 
       { !isLoggedIn() &&
         <div className={'links'}>
-          <p className={'link'} onClick={login}>Log In</p>
+          <p className={'link'} onClick={() => login()}>Log In</p>
         </div>
       }
     </div>

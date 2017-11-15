@@ -27,6 +27,7 @@ export function login() {
 export function logout() {
   clearIdToken();
   clearAccessToken();
+  window.location.href = "/";
   // TODO: Figure out browser history - maybe use a callback
   // browserHistory.push('/');
 }
