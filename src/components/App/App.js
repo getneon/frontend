@@ -2,12 +2,16 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
-import Navbar from '../Navbar/Navbar';
+import NavbarContainer from '../Navbar/NavbarContainer';
+import LoginContainer from '../Login/LoginContainer';
 import Home from '../Home/Home';
 import Editor from '../Editor/Editor';
 import Dashboard from '../Dashboard/Dashboard';
+import Callback from '../Navigation/Callback';
 
 import store from '../../redux/store';
+import { setUser } from '../../redux/actionCreators';
+import { requireAuth } from '../../util/auth/AuthService';
 
 import './App.css';
 
@@ -17,12 +21,14 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div>
-            <Navbar />
+            <NavbarContainer />
 
             <Switch>
               <Route exact path='/' component={Home} />
               <Route path='/dashboard' component={Dashboard} />
               <Route path='/doc' component={Editor} />
+              <Route path='/sign_in' component={LoginContainer} />
+              <Route path="/callback" component={Callback} />
             </Switch>
 
           </div>
